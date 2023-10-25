@@ -23,5 +23,19 @@ document.write('<p class="parrafoDestacado" >esto es una prueba de document.writ
 // ventanas emergentes
 alert('Hola Mundo');
 
+// solicitar un usuario un nombre y mostrar un mjs
+const nombreUsuario = prompt('Ingrese un nombre');
+
+console.log(nombreUsuario);
+
+document.write('<p>Bienvenido '+nombreUsuario + '</p>');
+
+// solicitar a un usuario el precio de un producto en dolares
+const precioSolicitado = (parseFloat(prompt'Ingrese un valor en dolares'));
+// alert('El importe solicitado corresponde a $'+(precioSolicitado * 1100) + 'pesos argentinos');
+
+// parseInt ('50')
+// parseFloat ('50.04')
+alert('El importe solicitado corresponde a USD$'+(precioSolicitado + 2));
 
 
