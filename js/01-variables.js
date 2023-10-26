@@ -31,7 +31,7 @@ console.log(nombreUsuario);
 document.write('<p>Bienvenido '+nombreUsuario + '</p>');
 
 // solicitar a un usuario el precio de un producto en dolares
-const precioSolicitado = (parseFloat(prompt'Ingrese un valor en dolares'));
+const precioSolicitado = parseFloat(prompt('Ingrese un valor en dolares'));
 // alert('El importe solicitado corresponde a $'+(precioSolicitado * 1100) + 'pesos argentinos');
 
 // parseInt ('50')
