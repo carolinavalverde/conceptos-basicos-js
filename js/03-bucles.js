@@ -29,3 +29,13 @@ document.write(`<p>este es el renglon número ${contador} (do-while) </p>`);
 contador++;
 }while(contador <= 10)
 
+/*
+for(inicializar una variable; condicion logica; algo que detenga-incrementar o decrementar){
+todo lo que quiero ejecutar varias veces
+}
+*/
+
+for(let cuentaRegresiva = 10; cuentaRegresiva > 0; cuentaRegresiva--){
+    document.write(`<p>Cuenta Regresiva N ${cuentaRegresiva}</p>`);
+
+}
