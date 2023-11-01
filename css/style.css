@@ -1,13 +1,14 @@
 .parrafoDestacado {
-    background: yellowgreen;
+  background: yellowgreen;
 }
 
-table, td {
-    border: 1x solid rgb(6, 6, 88);
+table,
+td {
+  border: 2px solid rgb(6, 6, 88);
 }
 
 td {
-    padding: 10px;
+  padding: 10px;
 }
 
 /* :nth-child()para una fila de cada color  */
