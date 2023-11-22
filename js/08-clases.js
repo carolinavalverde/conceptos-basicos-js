@@ -12,7 +12,8 @@ class Pokemon {
     evolucion,
     ataque,
     nroPokedex,
-    fuerza
+    fuerza,
+    estado
   ) {
     this.nombre = nombre;
     this.tipo = tipo;
@@ -22,6 +23,7 @@ class Pokemon {
     this.ataque = ataque;
     this.nroPokedex = nroPokedex;
     this.fuerza = fuerza;
+    this.estado = true;//valor por defecto
   }
   //propiedades computadas: get(devuelve el dato privado) y set(modifica el dato privado)
   get tipo() {
@@ -32,8 +34,19 @@ class Pokemon {
   }
 
   //metodos
+  mostrarDatos() {
+    document.write(`<h2>Pokemon: ${this.nombre}</h2>
+    <ul>
+    <li>Tipo: ${this.tipo}<li>
+    <li>Peso: ${this.peso}<li>
+    <li>Altura: ${this.altura}<li>
+    <li>Evolucion: ${this.evolucion}<li>
+    <li>Nro Pokedex: ${this.nroPokedex}<li>
+    </ul>`);
+  }
 }
 
+//crear o instancear un objeto
 const charmander = new Pokemon(
   `Charmander`,
   `fuego`,
@@ -44,6 +57,17 @@ const charmander = new Pokemon(
   4,
   4
 );
+const togepi = new Pokemon(
+  `Togepi`,
+  `hada`,
+  1.5,
+  0.3,
+  [`togetic`, `togekiss`],
+  [`gracia serena`, `dicha y entusiasmo`, `placaje`],
+  175,
+  2
+);
+
 console.log(charmander);
 document.write(`<h2>Pokemon: ${charmander.nombre}<h2>`);
 document.write(`<h2>Tipo: ${charmander.tipo}<h2>`);
@@ -51,3 +75,6 @@ document.write(`<h2>Tipo: ${charmander.tipo}<h2>`);
 charmander.tipo = `fuego 2`;
 document.write(`<h2>Tipo: ${charmander.tipo}<h2>`);
 
+charmander.mostrarDatos();
+
+togepi.mostrarDatos();
