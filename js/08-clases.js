@@ -12,8 +12,7 @@ class Pokemon {
     evolucion,
     ataque,
     nroPokedex,
-    fuerza,
-    estado
+    fuerza
   ) {
     this.nombre = nombre;
     this.tipo = tipo;
@@ -23,7 +22,7 @@ class Pokemon {
     this.ataque = ataque;
     this.nroPokedex = nroPokedex;
     this.fuerza = fuerza;
-    this.estado = true;//valor por defecto
+    this.estado = true; //valor por defecto
   }
   //propiedades computadas: get(devuelve el dato privado) y set(modifica el dato privado)
   get tipo() {
@@ -37,11 +36,65 @@ class Pokemon {
   mostrarDatos() {
     document.write(`<h2>Pokemon: ${this.nombre}</h2>
     <ul>
-    <li>Tipo: ${this.tipo}<li>
-    <li>Peso: ${this.peso}<li>
-    <li>Altura: ${this.altura}<li>
-    <li>Evolucion: ${this.evolucion}<li>
-    <li>Nro Pokedex: ${this.nroPokedex}<li>
+    <li>Tipo: ${this.tipo}</li>
+    <li>Peso: ${this.peso}</li>
+    <li>Altura: ${this.altura}</li>
+    <li>Evolucion: ${this.evolucion}</li>
+    <li>Nro Pokedex: ${this.nroPokedex}</li>
+    </ul>`);
+  }
+}
+
+class PokemonLegendario extends Pokemon {
+  #rareza;
+  #ataqueEspecial;
+  constructor(
+    nombre,
+    tipo,
+    peso,
+    altura,
+    evolucion,
+    ataque,
+    nroPokedex,
+    fuerza,
+    rareza,
+    ataqueEspecial
+  ) {
+    super(nombre, tipo, peso, altura, evolucion, ataque, nroPokedex, fuerza);
+    this.#rareza = rareza;
+    this.#ataqueEspecial = ataqueEspecial;
+  }
+
+  get rareza() {
+    return this.#rareza;
+  }
+  set rareza(nuevaRareza) {
+    if (nuevaRareza.length >= 3 && nuevaRareza.length <= 10) {
+      this.rareza = nuevaRareza;
+    } else {
+      alert("Ingresaste un valor erróneo");
+    }
+  }
+  get ataqueEspecial() {
+    return this.#ataqueEspecial;
+  }
+  set ataqueEspecial(nuevaRareza) {
+    this.#ataqueEspecial = nuevaRareza;
+  }
+
+  //agregar mas metodos
+  mostrarDatosNuevos() {} //le agrego las nuevas propiedades
+  //polimorfismo
+  mostrarDatos() {
+    document.write(`<h2>Pokemon: ${this.nombre}</h2>
+    <ul>
+    <li>Nro Pokedex: ${this.nroPokedex}</li>
+    <li>Tipo: ${this.tipo}</li>
+    <li>Peso: ${this.peso}</li>
+    <li>Altura: ${this.altura}</li>
+    <li>Evolucion: ${this.evolucion}</li>
+    <li>Rareza: ${this.rareza}</li>
+    <li>Ataques Especiales: ${this.ataqueEspecial}</li>
     </ul>`);
   }
 }
@@ -78,3 +131,18 @@ document.write(`<h2>Tipo: ${charmander.tipo}<h2>`);
 charmander.mostrarDatos();
 
 togepi.mostrarDatos();
+
+const mewtwo = new PokemonLegendario(
+  `Mewtwo`,
+  `psiquico`,
+  122,
+  2,
+  [],
+  [`confución`, `placaje`],
+  150,
+  7,
+  `Infrecuente`,
+  [`charge beam`, `electro ball`]
+);
+
+mewtwo.mostrarDatos();
